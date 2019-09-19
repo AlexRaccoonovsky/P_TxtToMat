@@ -1,0 +1,4 @@
+NAME: TxtToMat
+Motto: Are you want .MAT file with historical data?
+Target: M-file for converting historical data from many .txt-files to one .mat-file
+		
