@@ -1,8 +1,11 @@
 #ignore all .mat, temporary files in current dirrectory
+
 *.mat
 *.asv
 *~
+~*
 #ignore all .mat, *.asv, temporary files in current dirrectory
 func/*.mat
 func/*.asv
 func/*~
+func/~*
