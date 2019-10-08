@@ -8,16 +8,18 @@ function InfTableOfTxtFiles=ParseTxtList(PathToTxtFiles)
 % 4. Start Date;
 % 5. Start Time;
 % 6. Finish Date;
-% 7. Finish Time.
+% 7. Finish Time;
+% 8. Quantities Of Rows.
 NumRowTable=0;
 TxtListFiles=dir(char(PathToTxtFiles));
 SizeListTxt=size(TxtListFiles);
 for NumRowList=1:1:SizeListTxt
     if ((TxtListFiles(NumRowList).isdir)==0)
-        NumRowTable=NumRowTable+1;
-        InfTableOfTxtFiles(NumRowTable).FileName=TxtListFiles(NumRowList).name;
-        InfFromFile=GetInfFromFile(TxtListFiles(NumRowList).name);
-        InfTableOfTxtFiles(NumRowTable).SecName=GetInfFromFile(TxtListFiles(NumRowList).name);
+        NumRowTable=NumRowTable+1
+        InfTableOfTxtFiles(NumRowTable)=GetInfFromTxtFile(PathToTxtFiles,TxtListFiles(NumRowList).name);
+%         InfTableOfTxtFiles(NumRowTable).FileName=TxtListFiles(NumRowList).name;
+%         InfFromFile=GetInfFromFile(TxtListFiles(NumRowList).name);
+%         InfTableOfTxtFiles(NumRowTable).SecName=GetInfFromFile(TxtListFiles(NumRowList).name);
     end
 end
     

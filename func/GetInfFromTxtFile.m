@@ -7,7 +7,7 @@ FullPatch=strcat(char(PathToTxtFiles),'\',FileName);
 %Symbol for identification first string
 SymOfFirstStr001='<';
 %OpeningFile
-IDFile = fopen(FullPatch,'r')
+IDFile = fopen(FullPatch,'r');
 %Quantuty of rows in file
 QuanOfRow=0;
 % Time1=0;
