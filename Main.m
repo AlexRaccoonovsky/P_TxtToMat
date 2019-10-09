@@ -6,6 +6,10 @@ load InitCellArray.mat;
 PathToTxtFiles=InitCellArray(1,1);
 % Parsing list of txt files
 InfTableOfTxtFiles=ParseTxtList(PathToTxtFiles);
+%Arrangement Information Table Of Txt Files
+%% 
+[Checkout, ArrInfTable]=ArrangeInfTable(InfTableOfTxtFiles)
+
 
 
 %FileName='SPFB.Si_090605_100604.txt';
