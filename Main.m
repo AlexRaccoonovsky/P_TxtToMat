@@ -8,7 +8,7 @@ PathToTxtFiles=InitCellArray(1,1);
 InfTableOfTxtFiles=ParseTxtList(PathToTxtFiles);
 %Arrangement Information Table Of Txt Files
 %% 
-[Checkout, ArrInfTable]=ArrangeInfTable(InfTableOfTxtFiles)
+ArrInfTable=ArrangeInfTable(InfTableOfTxtFiles)
 
 
 

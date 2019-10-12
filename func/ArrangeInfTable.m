@@ -1,4 +1,4 @@
-function [Checkout, ArrInfTable]=ArrangeInfTable(InfTableOfTxtFiles)
+function ArrInfTable=ArrangeInfTable(InfTableOfTxtFiles)
 % Functions modificate InfTableOfTxtFiles which will using in
 % Integral Table Of Data (ArrInfTable) & generate checkout of
 % input InfTableOfTxtFiles
@@ -28,6 +28,9 @@ SizeOfInfTableOfTxtFiles=size(InfTableOfTxtFiles);
         Checkout(RowInInfTable).DateTimeFinish=datetime(DateTimeFinishStr,'InputFormat','yyyyMMdd_HHmmSS');
         
     end
+    
+    CheckoutTable=struct2table(Checkout);
+    SortStartDate=sortrows(CheckoutTable,'DateTimeStart');
         
 %Checkout=SizeOfInfTableOfTxtFiles;
-ArrInfTable=0;
+ArrInfTable=SortStartDate;
