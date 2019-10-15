@@ -8,5 +8,5 @@ PathToTxtFiles=InitCellArray(1,1);
 InfTableOfTxtFiles=ParseTxtList(PathToTxtFiles);
 % Arrangement Information Table Of Txt Files
 ArrInfTable=ArrangeInfTable(InfTableOfTxtFiles);
-% Create CompositeTable
+%% Create CompositeTable
 CompTable=TableCompositor(PathToTxtFiles,ArrInfTable);
