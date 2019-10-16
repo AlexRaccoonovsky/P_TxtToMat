@@ -22,7 +22,7 @@ SizeListTxt=size(TxtListFiles);
 for NumRowList=1:1:SizeListTxt
     if ((TxtListFiles(NumRowList).isdir)==0)
         %Num of string 
-        NumRowTable=NumRowTable+1
+        NumRowTable=NumRowTable+1;
         % filling output var InfTableOfTxtFiles 
         InfTableOfTxtFiles(NumRowTable)=GetInfFromTxtFile(PathToTxtFiles,TxtListFiles(NumRowList).name);
     end
