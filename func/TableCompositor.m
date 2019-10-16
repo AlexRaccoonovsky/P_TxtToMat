@@ -5,16 +5,18 @@ function CompTable=TableCompositor(PathToTxtFiles,ArrInfTable)
 
 SizeOfArrTable=size(ArrInfTable);
 % options for Convering functions
-opts = detectImportOptions('airlinesmall.csv');
+%opts = OptionsConfigurator();
 
 %%Cycle of treatment .txt files list
-for CurrentNameNum=1:1:SizeOfArrTable
+for CurrentNameNum=1:1:(SizeOfArrTable-5)
     %Current name of file
     CurrentNameFile=ArrInfTable{CurrentNameNum,1};
     CurrentNameFileStr=char(CurrentNameFile);
     %Full patch with name
-    FullPatch=strcat(char(PathToTxtFiles),CurrentNameFileStr);
+    FullPatch=char(fullfile(PathToTxtFiles,CurrentNameFileStr));
+    opts = detectImportOptions(FullPatch)
     %CompTable=FullPatch
+    %CompTable=readtable(FullPatch,'Format','%s %s %{yyyyMMdd}D %{HHmmSS}D %f %f %f %f %f');
     CompTable=readtable(FullPatch,opts);
 end
 
