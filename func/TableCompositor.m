@@ -1,24 +1,22 @@
 function CompTable=TableCompositor(PathToTxtFiles,ArrInfTable)
-%Functions for deriving data from .txt-files to the TableData
-
+%Function for deriving data from .txt-files to the TableData
 %%Initialize StartData
-
 SizeOfArrTable=size(ArrInfTable);
-% options for Convering functions
-%opts = OptionsConfigurator();
-
-%%Cycle of treatment .txt files list
-for CurrentNameNum=1:1:2%SizeOfArrTable
+%%Cycle of converting .txt files of list to one table
+for CurrentNameNum=1:1:SizeOfArrTable
     %Current name of file
     CurrentNameFile=ArrInfTable{CurrentNameNum,1};
     CurrentNameFileStr=char(CurrentNameFile);
     %Full patch with name
     FullPatch=char(fullfile(PathToTxtFiles,CurrentNameFileStr));
+    %Set transformation options
     opts = OptionsConfigurator(FullPatch);
-        
-    disp([opts.VariableNames' opts.VariableTypes'])
-    %CompTable=FullPatch
-    %CompTable=readtable(FullPatch,'Format','%s %s %{yyyyMMdd}D %{HHmmSS}D %f %f %f %f %f');
-    CompTable=readtable(FullPatch,opts)
+    %Forming CompTable & append tables to it
+        if (CurrentNameNum)==1
+            CompTable=readtable(FullPatch,opts);
+        else
+            LastTable=readtable(FullPatch,opts);
+            CompTable=[CompTable;LastTable];
+        end
 end
 
