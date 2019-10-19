@@ -9,4 +9,6 @@ InfTableOfTxtFiles=ParseTxtList(PathToTxtFiles);
 %% Arrangement Information Table Of Txt Files
 ArrInfTable=ArrangeInfTable(InfTableOfTxtFiles);
 %% Create CompositeTable
-CompTable=TableCompositor(PathToTxtFiles,ArrInfTable)
+CompTable=TableCompositor(PathToTxtFiles,ArrInfTable);
+%% Save table in .mat file
+Report=SaverTable(PathToTxtFiles,CompTable);
