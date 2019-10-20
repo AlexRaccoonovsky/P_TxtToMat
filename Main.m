@@ -12,3 +12,4 @@ ArrInfTable=ArrangeInfTable(InfTableOfTxtFiles);
 CompTable=TableCompositor(PathToTxtFiles,ArrInfTable);
 %% Save table in .mat file
 Report=SaverTable(PathToTxtFiles,CompTable);
+
