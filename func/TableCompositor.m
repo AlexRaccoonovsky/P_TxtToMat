@@ -19,4 +19,6 @@ for CurrentNameNum=1:1:SizeOfArrTable
             CompTable=[CompTable;LastTable];
         end
 end
+% Rename Names of columns CompTable
+CompTable.Properties.VariableNames = {'Ticker' 'Period' 'Date' 'Time' 'OP' 'HP' 'LP' 'CP' 'Vol'};
 
